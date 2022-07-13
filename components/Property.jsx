@@ -40,12 +40,15 @@ const Property = ({
         />
       </Box>
       <Box w="full">
+        <Text fontWeight="bold" fontSize="lg">
+          {title.length > 30 ? `${title.substring(0, 30)}...` : title}
+        </Text>
         <Flex paddingTop="2" alignItems="center" justifyContent="space-between">
           <Flex alignItems="center">
             <Box paddingRight="3" color="green.400">
               {isVerified && <GoVerified />}
             </Box>
-            <Text fontWeight="bold" fontSize="lg">
+            <Text fontStyle="italic" fontfontSize="lg">
               USD {millify(price)}
               {rentFrequency && `/${rentFrequency}`}
             </Text>
@@ -64,9 +67,6 @@ const Property = ({
           {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft
           <BsGridFill />
         </Flex>
-        <Text fontSize="lg">
-          {title.length > 30 ? `${title.substring(0, 30)}...` : title}
-        </Text>
       </Box>
     </Flex>
   </Link>
